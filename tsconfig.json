@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "strict": true,
+    "sourceMap": true,
+    "noImplicitReturns": true,
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "pretty": true,
+    "allowJs": true,
+    "checkJs": true,
+    "skipLibCheck": true,
+    "lib": ["dom", "dom.iterable", "es2017", "esnext.asynciterable"]
+  },
+  "compileOnSave": false,
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
+}
