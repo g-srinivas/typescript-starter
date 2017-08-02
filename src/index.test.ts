@@ -1,10 +1,19 @@
 import { is, List } from 'immutable';
 import { factorial, isPrime, ncr, pascalLine, pascalTriangle, primesUpTo } from './index';
 
-test('factorial', async () => {
-  expect(factorial(0)).toBe(1);
-  expect(factorial(1)).toBe(1);
-  expect(factorial(5)).toBe(120);
+describe('factorial', async () => {
+  it('factorial of negative numbers should throw error', () => {
+    expect(() => factorial(-1)).toThrow();
+  });
+  it('factorial of 0 should be 1', () => {
+    expect(factorial(0)).toBe(1);
+  });
+  it('factorial of 1 should be 1', () => {
+    expect(factorial(1)).toBe(1);
+  });
+  it('factorial of 5 should be 120', () => {
+    expect(factorial(5)).toBe(120);
+  });
 });
 
 test('ncr', () => {
@@ -32,13 +41,21 @@ test('primeNumbers', () => {
 });
 
 test('pascalTriangle', () => {
-  expect(List(pascalTriangle(1).map(x => x.toList()))).toEqual(List([List([1])]));
-  expect(List(pascalTriangle(2).map(x => x.toList()))).toEqual(List([List([1]),
-                                            List([1, 1])]));
-  expect(List(pascalTriangle(4).map(x => x.toList()))).toEqual(List([List([1]),
-                                            List([1, 1]),
-                                            List([1, 2, 1]),
-                                            List([1, 3, 3, 1])]));
+  expect(List(pascalTriangle(1)
+    .map(x => x.toList())))
+    .toEqual(List([List([1])]));
+
+  expect(List(pascalTriangle(2)
+    .map(x => x.toList())))
+    .toEqual(List([List([1]),
+    List([1, 1])]));
+
+  expect(List(pascalTriangle(4)
+    .map(x => x.toList())))
+    .toEqual(List([List([1]),
+    List([1, 1]),
+    List([1, 2, 1]),
+    List([1, 3, 3, 1])]));
 });
 
 
