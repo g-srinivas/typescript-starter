@@ -19,7 +19,8 @@ export const pascalLine = (n: number) => {
   if (n <= 0) {
     throw Error('number should not be less than1');
   }
-  return Range(0, n).map(x => ncr(n - 1, x));
+  return Range(0, n)
+    .map(x => ncr(n - 1, x));
 }
 
 export const isPrime = (n: number): boolean => {

@@ -22,12 +22,22 @@ test('ncr', () => {
   expect(ncr(5, 4)).toBe(5);
 });
 
-
-test('pascalLine', () => {
-  expect(is(pascalLine(1), List([1]))).toBeTruthy();
-  expect(is(pascalLine(2), List([1, 1]))).toBeTruthy();
-  expect(is(pascalLine(3), List([1, 2, 1]))).toBeTruthy();
-  expect(is(pascalLine(4), List([1, 3, 3, 1]))).toBeTruthy();
+describe('factorial', async () => {
+  it('pascalLine fornegative numbers should throw error', () => {
+    expect(() => pascalLine(-1)).toThrow();
+  });
+  it('1st pascalLine to be 1', () => {
+    expect(is(pascalLine(1), List([1]))).toBeTruthy();
+  });
+  it('2nd pascalLine to be  1 1', () => {
+    expect(is(pascalLine(2), List([1, 1]))).toBeTruthy();
+  });
+  it('3rd pascalLine to be  1 2 1', () => {
+    expect(is(pascalLine(3), List([1, 2, 1]))).toBeTruthy();
+  });
+  it('4th pascalLine to be  1 3 3 1', () => {
+    expect(is(pascalLine(4), List([1, 3, 3, 1]))).toBeTruthy();
+  });
 });
 
 test('isPrime', () => {
