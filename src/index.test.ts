@@ -1,5 +1,5 @@
 import { is, List } from 'immutable';
-import { factorial, isPrime, ncr, pascalLine, primesUpTo } from './index';
+import { factorial, isPrime, ncr, pascalLine, pascalTriangle, primesUpTo } from './index';
 
 test('factorial', async () => {
   expect(factorial(0)).toBe(1);
@@ -26,9 +26,20 @@ test('isPrime', () => {
   expect(isPrime(4)).toBeFalsy();
 });
 
-test('primeNumbers in 5 to be [2,3,5]', () => {
+test('primeNumbers', () => {
   expect(is(primesUpTo(5), List([2, 3, 5]))).toBe(true);
   expect(is(primesUpTo(10), List([2, 3, 5, 7]))).toBe(true);
-})
+});
+
+test('pascalTriangle', () => {
+  expect(List(pascalTriangle(1).map(x => x.toList()))).toEqual(List([List([1])]));
+  expect(List(pascalTriangle(2).map(x => x.toList()))).toEqual(List([List([1]),
+                                            List([1, 1])]));
+  expect(List(pascalTriangle(4).map(x => x.toList()))).toEqual(List([List([1]),
+                                            List([1, 1]),
+                                            List([1, 2, 1]),
+                                            List([1, 3, 3, 1])]));
+});
+
 
 

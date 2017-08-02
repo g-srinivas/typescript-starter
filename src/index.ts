@@ -23,3 +23,5 @@ export const isPrime = (n: number): boolean => {
 }
 
 export const primesUpTo = (n: number) => Range(2, n +1).filter(isPrime);
+
+export const pascalTriangle = (lines: number) => Range(1, lines + 1).map(pascalLine);
